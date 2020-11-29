@@ -5,7 +5,6 @@ import Header from "../components/header"
 import FloatingInput from "../components/floatingInput"
 import Form from "./../components/form"
 import SEO from "../components/seo"
-import { m } from "framer-motion"
 
 const Contact = () => {
   const [name, setName] = useState("");

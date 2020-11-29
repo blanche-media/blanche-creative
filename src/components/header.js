@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react"
 import Typed from "typed.js"
+import { NavLink } from "react-router-dom"
 
 import "./../fonts/index.css"
 
@@ -59,9 +60,9 @@ const Header = ({ text }) => {
 
   return (
     <div style={stylesheet.container}>
-      <a href="/" style={stylesheet.logo}>B.</a>
+      <NavLink to="/" style={stylesheet.logo}>B.</NavLink>
       <h1 ref={ref} style={stylesheet.body} />
-      <a href="/" style={stylesheet.copyright}>©BLANCHE MEDIA INC. 2020</a>
+      <NavLink to="/" style={stylesheet.copyright}>©BLANCHE MEDIA INC. 2020</NavLink>
     </div>
   );
 }

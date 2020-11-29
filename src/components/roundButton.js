@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import CircleType from 'circletype'
 import { motion } from "framer-motion"
+import { NavLink } from "react-router-dom"
 
 import "./../fonts/index.css"
 
@@ -54,9 +55,9 @@ const RoundButton = ({ text, dest, style, size, type }) => {
 
   return (
     dest ? (
-      <a
+      <NavLink
         style={styles.container}
-        href={"/" + dest}
+        to={"/" + dest}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}>
         <div style={styles.circle}/>
@@ -66,7 +67,7 @@ const RoundButton = ({ text, dest, style, size, type }) => {
           animate={spin.animation}
           transition={spin.transition}
           >{text}</motion.div>
-      </a>
+      </NavLink>
     ) : (
       <button
         style={styles.container}
