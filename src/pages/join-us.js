@@ -27,9 +27,9 @@ const JoinUs = () => {
   const formName = "joinUs";
 
   return (
-  <Layout>
-    <SEO title="Join Us" />
-    <Header text = {"JOI N US"} />
+    <Layout>
+      <SEO title="Join Us" />
+      <Header text = {"JOI N US"} />
       <Form style={styles.form} id={formName}>
         <FloatingInput
           required
@@ -55,7 +55,7 @@ const JoinUs = () => {
           name="comments"
           value={comments}
           onChange={e => setComments(e.target.value)} />
-        </Form>
+      </Form>
     </Layout>
   )
 }

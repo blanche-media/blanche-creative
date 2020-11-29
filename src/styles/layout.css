@@ -9,6 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #0d0d0d;
 }
+::selection {
+  color: #e84f38;
+}
 article,
 aside,
 details,

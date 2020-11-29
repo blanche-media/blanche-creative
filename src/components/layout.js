@@ -11,17 +11,8 @@ import PropTypes from "prop-types"
 import "./../styles/layout.css"
 
 const Layout = ({ children }) => {
-  const styles = {
-    container: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between",
-      overflow: "hidden",
-    }
-  }
-
   return (
-    <div style={styles.container}>
+    <div>
       {children}
     </div>
   )

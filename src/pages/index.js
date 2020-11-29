@@ -5,39 +5,36 @@ import Header from "../components/header"
 import RoundButton from "../components/roundButton"
 import SEO from "../components/seo"
 
-const styles = {
-  company : {
-    alignSelf: "flex-end",
-    marginLeft: "50px",
-  },
-  container : {
-    marginBottom: "-50px",
-    marginRight: "-50px",
-    marginLeft: "auto",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    flexDirection: "column",
-    overflow: "hidden",
-  }
-}
-
 const IndexPage = () => {
+  const isMobile = window.innerWidth < 700;
+
+  const styles = {
+    company : {
+      position: 'fixed',
+      right: 0,
+      top: 0
+    },
+    creator : {
+      position: 'fixed',
+      right: isMobile ? "-13vw" : "-2vw",
+      bottom: isMobile ? "15vh" : "-2vw"
+    }
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
       <Header text="GET THE RIGHT ATTEN TION." />
-      <div style={styles.container}>
-        <RoundButton 
-          text="I’M A CREATOR I’M A CREATOR"
-          dest="join-us"
-        />
-        <RoundButton 
-          text="I’M A COMPANY I’M A COMPANY"
-          dest="contact"
-          style={styles.company}
-        />
-      </div>
+      <RoundButton 
+        text="I’M A CREATOR I’M A CREATOR"
+        dest="join-us"
+        style={styles.creator}
+      />
+      <RoundButton 
+        text="I’M A COMPANY I’M A COMPANY"
+        dest="contact"
+        style={styles.company}
+      />
     </Layout>
   );
 }

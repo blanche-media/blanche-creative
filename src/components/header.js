@@ -1,21 +1,12 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect } from "react"
 import Typed from "typed.js"
 
 import "./../fonts/index.css"
 
 const Header = ({ text }) => {
   const ref = useRef();
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const handleResize = () => setIsMobile(window.innerWidth < 700);
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    };
-  }, []);
+  const isMobile = window.innerWidth < 700;
 
   const logoSize = isMobile ? 44 : 59;
   const bodySize = isMobile ? 56 : 100;
@@ -23,11 +14,11 @@ const Header = ({ text }) => {
 
   const stylesheet = {
     "container" : {
-      height: "100vh",
+      height: isMobile ? "80vh" : "100vh",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
-      width: "100vw"
+      width: "100vw",
     },
     "logo" : {
       paddingLeft: isMobile ? "10vw" : "15vw",
@@ -66,11 +57,12 @@ const Header = ({ text }) => {
   }, []);
 
   return (
-  <div style={stylesheet.container}>
-    <a href="/" style={stylesheet.logo}>B.</a>
-    <h1 ref={ref} style={stylesheet.body} />
-    <a href="/" style={stylesheet.copyright}>©BLANCHE MEDIA INC. 2020</a>
-  </div>);
+    <div style={stylesheet.container}>
+      <a href="/" style={stylesheet.logo}>B.</a>
+      <h1 ref={ref} style={stylesheet.body} />
+      <a href="/" style={stylesheet.copyright}>©BLANCHE MEDIA INC. 2020</a>
+    </div>
+  );
 }
 
 export default Header

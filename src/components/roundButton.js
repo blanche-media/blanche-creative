@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 import "./../fonts/index.css"
 
-const RoundButton = ({ text, dest, style, onClick, size, type }) => {
+const RoundButton = ({ text, dest, style, size, type }) => {
   const buttonRef = useRef();
   const [loading, setLoading] = useState(true);
   const [hover, setHover] = useState(false);
@@ -24,8 +24,8 @@ const RoundButton = ({ text, dest, style, onClick, size, type }) => {
   const styles = {
     container : {
       ...style,
-      width: size,
-      height: size,
+      width: `${size}vmax`,
+      height: `${size}vmax`,
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -34,16 +34,16 @@ const RoundButton = ({ text, dest, style, onClick, size, type }) => {
       border: "none"
     },
     circle : {
-      height: `${size/5}px`,
-      width: `${size/5}px`,
+      height: `${size/7}vmax`,
+      width: `${size/7}vmax`,
       borderRadius: "50%",
       backgroundColor: hover ? hoverColor : "white",
       position: "absolute",
     },
     buttonText : {
       color: loading ? "transparent" : hover ? hoverColor : "white",
-      font: `${size*0.13}px/${size*0.13}px PublicSans-SemiBold, serif`,
-      letterSpacing: `${size*0.015}px`,
+      font: `${size*0.13}vmax/${size*0.13}vmax PublicSans-SemiBold, serif`,
+      letterSpacing: `${size*0.015}vw`,
     },
   }
 
@@ -86,7 +86,7 @@ const RoundButton = ({ text, dest, style, onClick, size, type }) => {
 }
 
 RoundButton.defaultProps = {
-  size: 310
+  size: 16
 }
 
 export default RoundButton
