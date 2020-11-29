@@ -22,7 +22,7 @@ const Form = ({ style, id, children }) => {
       {children}
       <RoundButton
         text={"SEND SEND SEND SEND SEND"}
-        size={4}
+        size={5}
         type="submit"
         style={{ marginTop: "20px" }}
       />
