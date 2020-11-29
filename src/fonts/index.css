@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "BentonSans-Black";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./BentonSans-Black.woff");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Limerick-Serial-Medium-Regular";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./Limerick-Serial-Medium-Regular.ttf");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Limerick-Serial-Bold";
+    font-weight: bold;
+    font-style: normal;
+    src: url("./Limerick-Serial-Medium-Regular.ttf");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "PublicSans-Bold";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./PublicSans-Bold.woff");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "PublicSans-SemiBold";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./PublicSans-SemiBold.woff");
+    font-display: fallback;
+}
