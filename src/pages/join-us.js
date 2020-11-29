@@ -49,7 +49,7 @@ const JoinUs = () => {
           onChange={e => setSocials(e.target.value)} />
         <FloatingInput
           multiline
-          label="what cool stuff are you working on?"
+          label="why you?"
           name="comments"
           value={comments}
           onChange={e => setComments(e.target.value)} />

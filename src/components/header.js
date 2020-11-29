@@ -10,7 +10,7 @@ const Header = ({ text }) => {
   const isMobile = window.innerWidth < 700;
 
   const logoSize = isMobile ? 44 : 59;
-  const bodySize = isMobile ? 56 : 110;
+  const bodySize = isMobile ? 7.5 : 6.5;
   const copyrightSize = isMobile ? 19 : 21;
 
   const stylesheet = {
@@ -36,7 +36,7 @@ const Header = ({ text }) => {
       textDecoration: "none",
       flexGrow: "2",
       marginTop: "7vh",
-      font: `${bodySize}px/${bodySize}px PublicSans-Bold, serif`,
+      font: `${bodySize}vmax/${bodySize}vmax PublicSans-Bold, serif`,
     },
     "copyright" : {
       color: "white",
