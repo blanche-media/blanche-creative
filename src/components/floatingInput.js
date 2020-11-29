@@ -6,37 +6,39 @@ import "./../fonts/index.css"
 
 const FloatingInput = (props) => {
   const [focused, setFocused] = useState(false);
-  const height = "36px";
-  const smallHeight = "14px";
   const isFilled = props.value.length !== 0;
+
+  const isMobile = window.innerWidth < 700;
+
+  const height = isMobile ? 3 : 2;
+  const smallHeight = isMobile ? 1 : 0.6;
 
   const styles = {
     container : {
       position: "relative",
-      overflow: "hidden",
       padding: `0 0 0 0`,
-      marginBottom: "10px",
+      marginBottom: `${smallHeight}vmax`,
     },
     label : {
       position: "absolute",
-      left: isFilled ? "4px" : "0px",
-      top: isFilled ? "5px" : "25px",
-      font: `${height} BentonSans-Black, serif`,
+      top: `${isFilled ? smallHeight : height / 1.5}vmax`,
+      font: `${height}vmax BentonSans-Black, serif`,
       color: isFilled ? "#ffcc66" : focused ? "white" : "grey",
-      fontSize: isFilled ? smallHeight : height,
+      fontSize: `${isFilled ? smallHeight : height}vmax`,
       transition: "300ms",
+      height: "300px"
     },
     input : {
-      width: "100%",
-      paddingTop: "25px",
-      font: `${height} BentonSans-Black, serif`,
+      width: `${isMobile ? 85 : 60}%`,
+      paddingTop: `${height / 1.5}vmax`,
+      paddingLeft: `${0}vmax`,
+      font: `${height}vmax BentonSans-Black, serif`,
       transition: "300ms",
       color: "white",
       outline: 0,
       background: "transparent",
       border: "none",
-      overflowWrap: "break-word",
-      resize: "none",
+      overflow: "hidden",
     }
   }
 
@@ -45,9 +47,10 @@ const FloatingInput = (props) => {
       <label for={props.label}>
         <span style={styles.label}>{ props.label.toUpperCase() }</span>
       </label>
-      <TextareaAutosize
+      {props.multiline ? 
+      (<TextareaAutosize
         {...props}
-        rows={3}
+        rows={1}
         value={props.value}
         id={props.label}
         name={props.name ? props.name : props.label}
@@ -55,7 +58,18 @@ const FloatingInput = (props) => {
         type="text"
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-      />
+      />) : 
+      (<input
+        {...props}
+        rows={1}
+        value={props.value}
+        id={props.label}
+        name={props.name ? props.name : props.label}
+        style={styles.input}
+        type="text"
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+      />)}
     </div>
   );
 }

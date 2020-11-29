@@ -5,6 +5,7 @@ import Header from "../components/header"
 import FloatingInput from "../components/floatingInput"
 import Form from "./../components/form"
 import SEO from "../components/seo"
+import { m } from "framer-motion"
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -12,10 +13,13 @@ const Contact = () => {
   const [website, setWebsite] = useState("");
   const [company, setCompany] = useState("");
   const [comments, setComments] = useState("");
-  
+
   const styles = {
     form: {
-      margin: "8vh auto auto auto",
+      position: "fixed",
+      right: 0,
+      top: 0,
+      marginTop: "17vh",
     }
   }
 

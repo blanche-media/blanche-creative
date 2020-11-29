@@ -11,12 +11,12 @@ const IndexPage = () => {
   const styles = {
     company : {
       position: 'fixed',
-      right: 0,
+      right: "-2vmax",
       top: 0
     },
     creator : {
       position: 'fixed',
-      right: isMobile ? "-13vw" : "-2vw",
+      right: isMobile ? "-10vw" : "-2vw",
       bottom: isMobile ? "15vh" : "-2vw"
     }
   }

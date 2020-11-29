@@ -9,19 +9,20 @@ const Header = ({ text }) => {
   const isMobile = window.innerWidth < 700;
 
   const logoSize = isMobile ? 44 : 59;
-  const bodySize = isMobile ? 56 : 100;
+  const bodySize = isMobile ? 56 : 110;
   const copyrightSize = isMobile ? 19 : 21;
 
   const stylesheet = {
     "container" : {
-      height: isMobile ? "83vh" : "100vh",
+      height: isMobile ? "85vh" : "100vh",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
       width: "100vw",
     },
     "logo" : {
-      paddingLeft: isMobile ? "10vw" : "15vw",
+      marginLeft: isMobile ? "10vw" : "15vw",
+      marginRight: "auto",
       color: "white",
       textDecoration: "none",
       marginTop: "5vh",

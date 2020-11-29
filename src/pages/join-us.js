@@ -15,12 +15,10 @@ const JoinUs = () => {
 
   const styles = {
     form: {
-      margin: "8vh auto auto auto",
-    },
-    innerContainer: {
-      display: 'flex',
-      flexDirection: "row",
-      justifyContent: "flex-start",
+      position: "fixed",
+      right: 0,
+      top: 0,
+      marginTop: "17vh",
     }
   }
 

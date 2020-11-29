@@ -86,7 +86,7 @@ const RoundButton = ({ text, dest, style, size, type }) => {
 }
 
 RoundButton.defaultProps = {
-  size: 16
+  size: 17
 }
 
 export default RoundButton
