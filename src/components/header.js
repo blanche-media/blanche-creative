@@ -14,7 +14,7 @@ const Header = ({ text }) => {
 
   const stylesheet = {
     "container" : {
-      height: isMobile ? "80vh" : "100vh",
+      height: isMobile ? "83vh" : "100vh",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
