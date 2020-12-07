@@ -11,7 +11,7 @@ const Header = ({ text }) => {
 
   const logoSize = isMobile ? 44 : 59;
   const bodySize = isMobile ? 7.5 : 6.5;
-  const copyrightSize = isMobile ? 15 : 21;
+  const copyrightSize = isMobile ? 17 : 21;
 
   const stylesheet = {
     "container" : {
