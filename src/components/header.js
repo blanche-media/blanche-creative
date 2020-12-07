@@ -11,7 +11,7 @@ const Header = ({ text }) => {
 
   const logoSize = isMobile ? 44 : 59;
   const bodySize = isMobile ? 7.5 : 6.5;
-  const copyrightSize = isMobile ? 19 : 21;
+  const copyrightSize = isMobile ? 15 : 21;
 
   const stylesheet = {
     "container" : {
@@ -39,14 +39,16 @@ const Header = ({ text }) => {
       font: `${bodySize}vmax/${bodySize}vmax PublicSans-Bold, serif`,
     },
     "copyright" : {
+      position: "absolute",
       color: "white",
       textDecoration: "none",
       letterSpacing: "-0.37px",
-      marginBottom: "5vh",
       font: `${copyrightSize}px/${copyrightSize}px BentonSans-Black, serif`,
       wordBreak: "keep-all",
       paddingLeft: isMobile ? "0" : "15vw",
-      alignSelf: isMobile ? "center" : "left"
+      paddingRight: 0,
+      alignSelf: isMobile ? "center" : "left",
+      bottom: "5vh",
     }
   }
 
