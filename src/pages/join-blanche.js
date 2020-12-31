@@ -1,5 +1,8 @@
 import React from "react"
 
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 import Iframe from 'react-iframe'
 
 const JoinBlanche = () => {
@@ -25,6 +28,8 @@ const JoinBlanche = () => {
   }
 
   return (
+    <Layout>
+    <SEO title="Join Blanche" />
     <div style={styles.container}>
       <div style={styles.outer}></div>
       <Iframe
@@ -33,6 +38,7 @@ const JoinBlanche = () => {
         height="100%"
         frameBorder="0"/>
     </div>
+    </Layout>
   );
 }
 
