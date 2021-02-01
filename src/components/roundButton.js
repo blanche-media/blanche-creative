@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react"
-import CircleType from 'circletype'
-import { motion } from "framer-motion"
-import { NavLink } from "react-router-dom"
+import React, { useEffect, useRef, useState } from "react";
+import CircleType from "circletype";
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
-import "./../fonts/index.css"
+import "./../fonts/index.css";
 
 const RoundButton = ({ text, dest, style, size, type }) => {
   const buttonRef = useRef();
@@ -13,17 +13,17 @@ const RoundButton = ({ text, dest, style, size, type }) => {
 
   const spin = {
     animation: {
-      rotate: 360
+      rotate: 360,
     },
     transition: {
       loop: Infinity,
       ease: "linear",
-      duration: 15
-    }
-  }
+      duration: 15,
+    },
+  };
 
   const styles = {
-    container : {
+    container: {
       ...style,
       width: `${size}vmax`,
       height: `${size}vmax`,
@@ -32,62 +32,66 @@ const RoundButton = ({ text, dest, style, size, type }) => {
       alignItems: "center",
       textDecoration: "none",
       backgroundColor: "transparent",
-      border: "none"
+      border: "none",
     },
-    circle : {
-      height: `${size/7}vmax`,
-      width: `${size/7}vmax`,
+    circle: {
+      height: `${size / 7}vmax`,
+      width: `${size / 7}vmax`,
       borderRadius: "50%",
       backgroundColor: hover ? hoverColor : "white",
       position: "absolute",
     },
-    buttonText : {
+    buttonText: {
       color: loading ? "transparent" : hover ? hoverColor : "white",
-      font: `${size*0.13}vmax/${size*0.13}vmax PublicSans-SemiBold, serif`,
-      letterSpacing: `${size*0.015}vw`,
+      font: `${size * 0.13}vmax/${size * 0.13}vmax PublicSans-SemiBold, serif`,
+      letterSpacing: `${size * 0.015}vw`,
     },
-  }
+  };
 
   useEffect(() => {
     new CircleType(buttonRef.current);
     setLoading(false);
   }, []);
 
-  return (
-    dest ? (
-      <NavLink
-        style={styles.container}
-        to={"/" + dest}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}>
-        <div style={styles.circle}/>
-        <motion.div
-          ref={buttonRef}
-          style={styles.buttonText}
-          animate={spin.animation}
-          transition={spin.transition}
-          >{text}</motion.div>
-      </NavLink>
-    ) : (
-      <button
-        style={styles.container}
-        type={type}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}>
-        <div style={styles.circle}/>
-        <motion.div
-          ref={buttonRef}
-          style={styles.buttonText}
-          animate={spin.animation}
-          transition={spin.transition}
-          >{text}</motion.div>
-      </button>
-    )
+  return dest ? (
+    <NavLink
+      style={styles.container}
+      to={"/" + dest}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <div style={styles.circle} />
+      <motion.div
+        ref={buttonRef}
+        style={styles.buttonText}
+        animate={spin.animation}
+        transition={spin.transition}
+      >
+        {text}
+      </motion.div>
+    </NavLink>
+  ) : (
+    <button
+      style={styles.container}
+      type={type}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <div style={styles.circle} />
+      <motion.div
+        ref={buttonRef}
+        style={styles.buttonText}
+        animate={spin.animation}
+        transition={spin.transition}
+      >
+        {text}
+      </motion.div>
+    </button>
   );
-}
+};
 
 RoundButton.defaultProps = {
-  size: 17
-}
+  size: 17,
+};
 
-export default RoundButton
+export default RoundButton;

@@ -4,18 +4,18 @@ import { NavLink } from "react-router-dom";
 
 import "./../fonts/index.css";
 
-const Header = ({ text }) => {
+const SubHeader = ({ text }) => {
   const ref = useRef();
 
   const isMobile = window.innerWidth < 700;
 
-  const logoSize = isMobile ? 44 : 59;
-  const bodySize = isMobile ? 7.5 : 6.5;
+  const logoSize = isMobile ? 44 : 50;
+  const bodySize = isMobile ? 7.5 : 5.5;
   const copyrightSize = isMobile ? 18 : 21;
 
   const stylesheet = {
     container: {
-      height: isMobile ? "85vh" : "100vh",
+      height: isMobile ? "85vh" : "80vh",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
@@ -28,6 +28,7 @@ const Header = ({ text }) => {
       textDecoration: "none",
       marginTop: "5vh",
       font: `${logoSize}px/${logoSize}px Limerick-Serial-Bold, serif`,
+      zIndex: 10
     },
     body: {
       paddingLeft: isMobile ? "10vw" : "15vw",
@@ -37,6 +38,7 @@ const Header = ({ text }) => {
       flexGrow: "2",
       marginTop: "7vh",
       font: `${bodySize}vmax/${bodySize}vmax PublicSans-Bold, serif`,
+      zIndex: 10
     },
     copyright: {
       position: "absolute",
@@ -66,11 +68,8 @@ const Header = ({ text }) => {
         B.
       </NavLink>
       <h1 ref={ref} style={stylesheet.body} />
-      <NavLink to="/" style={stylesheet.copyright}>
-        ©BLANCHE MEDIA INC. 2020
-      </NavLink>
     </div>
   );
 };
 
-export default Header;
+export default SubHeader;

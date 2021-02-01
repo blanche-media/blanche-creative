@@ -1,23 +1,19 @@
-import React from "react"
+import React from "react";
 
-import RoundButton from "./../components/roundButton"
-import "./../fonts/index.css"
+import RoundButton from "./../components/roundButton";
+import "./../fonts/index.css";
 
 const Form = ({ style, id, children }) => {
   const formStyle = {
     ...style,
-    display: 'flex',
+    display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     width: "60%",
-  }
+  };
 
   return (
-    <form style={formStyle}
-      id={id}
-      name={id}
-      method="POST"
-      data-netlify="true">
+    <form style={formStyle} id={id} name={id} method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value={id} />
       {children}
       <RoundButton
@@ -28,6 +24,6 @@ const Form = ({ style, id, children }) => {
       />
     </form>
   );
-}
+};
 
-export default Form
+export default Form;
