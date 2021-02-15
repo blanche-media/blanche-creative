@@ -3,8 +3,8 @@ import RoundButton from "./roundButton";
 
 const TheFuture = ({ id }) => {
   const isMobile = window.innerWidth < 700;
-  const headingSize = isMobile ? 0.8 : 40;
-  const bodySize = isMobile ? 0.8 : 18;
+  const headingSize = isMobile ? 30 : 40;
+  const bodySize = isMobile ? 16 : 18;
 
   const styles = {
     container: {
@@ -12,6 +12,7 @@ const TheFuture = ({ id }) => {
       height: "100vh",
       width: "100vw",
       paddingTop: "10vh",
+      overflow: "hidden",
     },
     text: {
       marginLeft: "15vw",

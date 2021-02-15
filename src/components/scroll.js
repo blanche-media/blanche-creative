@@ -7,18 +7,19 @@ const Scroll = ({ text, id, style }) => {
   const styles = {
     container: {
       display: "flex",
+      flexDirection: isMobile ? "column-reverse" : "row",
       alignItems: "center",
-      marginTop: "9vh",
-      marginLeft: isMobile ? "10vw" : "15vw",
-      paddingBottom: "11vh",
+      marginTop: isMobile ? "6vh" : "9vh",
+      marginLeft: isMobile ? 0 : "15vw",
+      paddingBottom: isMobile ? "3vh" : "11vh",
     },
     text: {
       color: "white",
       letterSpacing: "-1.1px",
       textDecoration: "none",
       fontSize: 14,
-      marginBottom: 0,
-      paddingLeft: 10,
+      marginBottom: isMobile ? "0.5rem" : 0,
+      paddingLeft: isMobile ? 0 : 10,
       cursor: "pointer",
     },
     icon: {

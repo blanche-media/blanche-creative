@@ -16,7 +16,7 @@ const IndexPage = () => {
     },
     creator: {
       position: "fixed",
-      right: isMobile ? "-10vw" : "-2vw",
+      right: "-2vw",
       bottom: isMobile ? "15vh" : "-2vw",
     },
   };
@@ -32,7 +32,7 @@ const IndexPage = () => {
       />
       <RoundButton
         text="I’M A COMPANY I’M A COMPANY"
-        dest="contact"
+        dest="company"
         style={styles.company}
       />
     </Layout>

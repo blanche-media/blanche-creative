@@ -9,12 +9,6 @@ import Scroll from "../components/scroll";
 import ImageHeader from "../components/imageHeader";
 import TheFuture from "../components/theFuture";
 
-const images = [
-  "../images/creator1.jpg",
-  "../images/creator2.jpeg",
-  "../images/creator3.jpeg",
-];
-
 const Creator = () => {
   const isMobile = window.innerWidth < 700;
 
@@ -24,8 +18,14 @@ const Creator = () => {
   const styles = {
     contact: {
       position: "absolute",
-      right: isMobile ? "-10vw" : "-4vw",
+      overflow: "hidden",
+      right: isMobile ? "-10vw" : "-5vw",
       top: "-4vw",
+    },
+    pageOne: {
+      position: "relative",
+      overflow: "hidden",
+      width: "100vw",
     },
     bgImage: {
       width: "100vw",
@@ -63,20 +63,28 @@ const Creator = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
-      <SubHeader text="I'M A CRE ATO R" />
-      <RoundButton
-        text="CONTACT CONTACT"
-        dest="contact"
-        style={styles.contact}
-      />
-      <Collage images={images} />
-      <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
+      <div style={styles.pageOne}>
+        <SEO title="Creator" />
+        <SubHeader text="I'M A CRE ATO R" />
+        <RoundButton
+          text="CONTACT CONTACT"
+          dest="contact"
+          style={styles.contact}
+        />
+        <Collage creator={true} />
+        <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
+      </div>
       <div style={styles.bgImage} id={"two"}>
         <div style={styles.imageText}>
           <ImageHeader />
         </div>
-        <Scroll text={"KEEP SCROLLING"} id={"three"} style={styles.scrollTwo} />
+        {!isMobile && (
+          <Scroll
+            text={"KEEP SCROLLING"}
+            id={"three"}
+            style={styles.scrollTwo}
+          />
+        )}
       </div>
       {/*<div style={styles.sectionThree} id={"three"}>*/}
       {/*  <div>*/}

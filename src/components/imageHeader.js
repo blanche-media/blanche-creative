@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 import "./../fonts/index.css";
 
-const ImageHeader = ({ text }) => {
+const ImageHeader = ({ company }) => {
   const ref = useRef();
 
   const isMobile = window.innerWidth < 700;
 
-  const headingSize = isMobile ? 44 : 90;
-  const bodySize = isMobile ? 7.5 : 22;
+  const headingSize = isMobile ? 55 : 90;
+  const bodySize = isMobile ? 15 : 22;
 
   const stylesheet = {
     container: {
@@ -18,12 +18,12 @@ const ImageHeader = ({ text }) => {
       flexDirection: "column",
       justifyContent: "flex-start",
       width: "80vw",
-      borderLeft: "15px solid white",
+      borderLeft: isMobile ? "10px solid white" : "15px solid white",
       marginTop: "10px",
       marginBottom: "10px",
     },
     heading: {
-      marginLeft: isMobile ? "10vw" : "4vw",
+      marginLeft: "4vw",
       marginRight: "auto",
       color: "white",
       textDecoration: "none",
@@ -31,15 +31,17 @@ const ImageHeader = ({ text }) => {
       zIndex: 10,
     },
     body: {
-      paddingLeft: isMobile ? "10vw" : "4vw",
+      paddingLeft: "4vw",
       color: "white",
       textDecoration: "none",
       flexGrow: "2",
       font: `${bodySize}px PublicSans-Regular, serif`,
+      fontFamily: "PublicSans-Regular",
+      alignSelf: isMobile ? "start" : "center",
       zIndex: 10,
-      alignSelf: "center",
-      lineHeight: "28px",
+      lineHeight: isMobile ? "18px" : "28px",
       letterSpacing: "0.6px",
+      marginTop: isMobile ? "0.5rem" : 0,
     },
     row: {
       display: "flex",
@@ -49,18 +51,29 @@ const ImageHeader = ({ text }) => {
 
   return (
     <div style={stylesheet.container}>
-      <span style={stylesheet.heading}>WE MAKE</span>
+      <span style={stylesheet.heading}>{company ? "WE GET" : "WE MAKE"}</span>
       <span style={stylesheet.heading}>LIFE</span>
       <div style={stylesheet.row}>
         <span style={stylesheet.heading}>EASY</span>
-        <div style={stylesheet.body}>
-          <div>Our goal is to empower creators to share their message</div>
-          <div>through organic brand partnerships.</div>
-          <div>
-            Focus on what really matters, and let us take care of the rest
+        {!isMobile && (
+          <div style={stylesheet.body}>
+            <div>Our goal is to empower creators to share their message</div>
+            <div>through organic brand partnerships.</div>
+            <div>
+              Focus on what really matters, and let us take care of the rest
+            </div>
           </div>
-        </div>
+        )}
       </div>
+      {isMobile && (
+        <div style={stylesheet.body}>
+          <div>Our goal is to empower creators to</div>
+          <div>share their message through organic</div>
+          <div>brand partnerships.</div>
+          <div>Focus on what really matters, and let</div>
+          <div>us take care of the rest</div>
+        </div>
+      )}
     </div>
   );
 };

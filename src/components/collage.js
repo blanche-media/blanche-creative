@@ -2,8 +2,11 @@ import React from "react";
 import Creator1 from "../images/creator1.jpg";
 import Creator2 from "../images/creator2.jpeg";
 import Creator3 from "../images/creator3.jpeg";
+import Company1 from "../images/company1.jpg";
+import Company2 from "../images/company2.jpeg";
+import Company3 from "../images/company3.jpg";
 
-const Collage = ({ images }) => {
+const Collage = ({ creator }) => {
   const isMobile = window.innerWidth < 700;
 
   const styles = {
@@ -17,25 +20,39 @@ const Collage = ({ images }) => {
 
     img: {
       position: "absolute",
-      width: "48vh",
-      height: "60vh",
-      backgroundColor: "rgba(47,110,122,0.5)",
+      width: isMobile ? "24vh" : "48vh",
+      height: isMobile ? "30vh" : "60vh",
     },
   };
 
   return (
     <div style={styles.imgContainer}>
       <img
-        src={Creator1}
-        style={{ ...styles.img, left: 0, top: "10vh", zIndex: 1 }}
+        src={creator ? Creator1 : Company1}
+        style={{
+          ...styles.img,
+          left: 0,
+          top: "10vh",
+          zIndex: isMobile ? 2 : 1,
+        }}
       />
       <img
-        src={Creator2}
-        style={{ ...styles.img, left: "40vh", top: 0, zIndex: 2 }}
+        src={creator ? Creator2 : Company2}
+        style={{
+          ...styles.img,
+          left: isMobile ? "20vh" : "40vh",
+          top: 0,
+          zIndex: isMobile ? 1 : 2,
+        }}
       />
       <img
-        src={Creator3}
-        style={{ ...styles.img, left: "80vh", top: "15vh", zIndex: 1 }}
+        src={creator ? Creator3 : Company3}
+        style={{
+          ...styles.img,
+          left: isMobile ? "18vh" : "80vh",
+          top: isMobile ? "26vh" : "15vh",
+          zIndex: isMobile ? 3 : 1,
+        }}
       />
     </div>
   );

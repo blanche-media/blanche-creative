@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 import "./../fonts/index.css";
 
-const SubHeader = ({ text }) => {
+const SubHeader = ({ text, small }) => {
   const ref = useRef();
 
   const isMobile = window.innerWidth < 700;
 
   const logoSize = isMobile ? 44 : 50;
-  const bodySize = isMobile ? 7.5 : 5.5;
+  const bodySize = isMobile ? 8.5 : small ? 5.5 : 6.5;
   const copyrightSize = isMobile ? 18 : 21;
 
   const stylesheet = {
@@ -28,7 +28,7 @@ const SubHeader = ({ text }) => {
       textDecoration: "none",
       marginTop: "5vh",
       font: `${logoSize}px/${logoSize}px Limerick-Serial-Bold, serif`,
-      zIndex: 10
+      zIndex: 10,
     },
     body: {
       paddingLeft: isMobile ? "10vw" : "15vw",
@@ -38,7 +38,7 @@ const SubHeader = ({ text }) => {
       flexGrow: "2",
       marginTop: "7vh",
       font: `${bodySize}vmax/${bodySize}vmax PublicSans-Bold, serif`,
-      zIndex: 10
+      zIndex: 10,
     },
     copyright: {
       position: "absolute",
