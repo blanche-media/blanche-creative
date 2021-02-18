@@ -1,12 +1,15 @@
-import React, { useRef, useEffect } from "react";
-import Typed from "typed.js";
-import { NavLink } from "react-router-dom";
+import React from "react";
 
 import "./../fonts/index.css";
 
-const ImageHeader = ({ company }) => {
-  const ref = useRef();
-
+/**
+ * Text overlay for background images and videos
+ * @param title {[string]} Array of length three
+ * @param desc {[string]}
+ * @return {JSX.Element}
+ * @constructor
+ */
+const ImageHeader = ({ title, desc }) => {
   const isMobile = window.innerWidth < 700;
 
   const headingSize = isMobile ? 55 : 90;
@@ -39,7 +42,7 @@ const ImageHeader = ({ company }) => {
       fontFamily: "PublicSans-Regular",
       alignSelf: isMobile ? "start" : "center",
       zIndex: 10,
-      lineHeight: isMobile ? "18px" : "28px",
+      lineHeight: isMobile ? "19px" : "28px",
       letterSpacing: "0.6px",
       marginTop: isMobile ? "0.5rem" : 0,
     },
@@ -51,27 +54,23 @@ const ImageHeader = ({ company }) => {
 
   return (
     <div style={stylesheet.container}>
-      <span style={stylesheet.heading}>{company ? "WE GET" : "WE MAKE"}</span>
-      <span style={stylesheet.heading}>LIFE</span>
+      <span style={stylesheet.heading}>{title[0]}</span>
+      <span style={stylesheet.heading}>{title[1]}</span>
       <div style={stylesheet.row}>
-        <span style={stylesheet.heading}>EASY</span>
+        <span style={stylesheet.heading}>{title[2]}</span>
         {!isMobile && (
           <div style={stylesheet.body}>
-            <div>Our goal is to empower creators to share their message</div>
-            <div>through organic brand partnerships.</div>
-            <div>
-              Focus on what really matters, and let us take care of the rest
-            </div>
+            {desc.map((line) => (
+              <div>{line}</div>
+            ))}
           </div>
         )}
       </div>
       {isMobile && (
         <div style={stylesheet.body}>
-          <div>Our goal is to empower creators to</div>
-          <div>share their message through organic</div>
-          <div>brand partnerships.</div>
-          <div>Focus on what really matters, and let</div>
-          <div>us take care of the rest</div>
+          {desc.map((line) => (
+            <div>{line}</div>
+          ))}
         </div>
       )}
     </div>

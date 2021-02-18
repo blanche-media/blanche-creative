@@ -8,64 +8,34 @@ import SEO from "../components/seo";
 import Scroll from "../components/scroll";
 import ImageHeader from "../components/imageHeader";
 import TheFuture from "../components/theFuture";
+import { makeCreatorStyles } from "../styles/MakeStyles";
+import companyVid from "../videos/companyVid.mp4";
+
+const videoDescriptionFull = [
+  "Getting someones attention isn’t easy. Let us paint a",
+  "clearer picture towards your audience and say",
+  "goodbye to the guessing games.",
+];
+
+const videoDescriptionMobile = [
+  "Getting someones attention isn’t easy.",
+  "Let us paint a clearer picture",
+  "towards your audience and say",
+  "goodbye to the guessing games.",
+];
+
+const videoTitle = ["WE", "TURN", "HEADS"];
 
 const Company = () => {
   const isMobile = window.innerWidth < 700;
 
-  const listTitleSize = isMobile ? 44 : 50;
-  const listDescSize = isMobile ? 44 : 20;
-
-  const styles = {
-    contact: {
-      position: "absolute",
-      overflow: "hidden",
-      right: isMobile ? "-10vw" : "-5vw",
-      top: "-4vw",
-    },
-    pageOne: {
-      position: "relative",
-      overflow: "hidden",
-      width: "100vw",
-    },
-    bgImage: {
-      width: "100vw",
-      height: "100vh",
-      backgroundColor: "rgba(0,100,200,0.4)",
-    },
-    imageText: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "90vh",
-    },
-    scrollTwo: {
-      paddingBottom: 0,
-      marginTop: 0,
-    },
-    sectionThree: {
-      marginLeft: "15vw",
-      marginTop: "30vh",
-    },
-    listTitle: {
-      color: "white",
-      textDecoration: "none",
-      font: `${listTitleSize}px PublicSans-Bold, serif`,
-    },
-    listDesc: {
-      color: "white",
-      textDecoration: "none",
-      font: `${listDescSize}px PublicSans-Regular, serif`,
-      letterSpacing: "0.6px",
-      width: "45vw",
-      lineHeight: 1.55,
-    },
-  };
+  const styles = makeCreatorStyles();
 
   return (
     <Layout>
       <div style={styles.pageOne}>
         <SEO title="Creator" />
-        <SubHeader text="I'M A CO MP AN Y" small={true} />
+        <SubHeader text="I'M A CO MPA NY" />
         <RoundButton
           text="CONTACT CONTACT"
           dest="contact"
@@ -74,9 +44,15 @@ const Company = () => {
         <Collage creator={false} />
         <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
       </div>
-      <div style={styles.bgImage} id={"two"}>
-        <div style={styles.imageText}>
-          <ImageHeader company={true} />
+      <div style={styles.bgVideo} id={"two"}>
+        <video className="videoTag" autoPlay loop muted style={styles.video}>
+          <source src={companyVid} type="video/mp4" />
+        </video>
+        <div style={styles.videoText}>
+          <ImageHeader
+            title={videoTitle}
+            desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+          />
         </div>
         {!isMobile && (
           <Scroll
@@ -96,7 +72,11 @@ const Company = () => {
       {/*    </div>*/}
       {/*  </div>*/}
       {/*</div>*/}
-      <TheFuture id={"three"} />
+      <TheFuture
+        id={"three"}
+        copyA={"WE DO MORE THAN JUST CONNECT YOU TO TALENT"}
+        copyB={"WE TREAT YOUR BUSINESS LIKE OUR OWN"}
+      />
     </Layout>
   );
 };

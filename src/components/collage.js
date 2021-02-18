@@ -4,7 +4,7 @@ import Creator2 from "../images/creator2.jpeg";
 import Creator3 from "../images/creator3.jpeg";
 import Company1 from "../images/company1.jpg";
 import Company2 from "../images/company2.jpeg";
-import Company3 from "../images/company3.jpg";
+import Company3 from "../images/company3.png";
 
 const Collage = ({ creator }) => {
   const isMobile = window.innerWidth < 700;

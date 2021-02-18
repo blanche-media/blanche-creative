@@ -8,58 +8,28 @@ import SEO from "../components/seo";
 import Scroll from "../components/scroll";
 import ImageHeader from "../components/imageHeader";
 import TheFuture from "../components/theFuture";
+import creatorVid from "../videos/creatorVid.mp4";
+import { makeCreatorStyles } from "../styles/MakeStyles";
+
+const videoDescriptionFull = [
+  "Our goal is to empower creators to share their message",
+  "through organic brand partnerships.",
+  "Focus on what really matters, and let us take care of the rest",
+];
+
+const videoDescriptionMobile = [
+  "Our goal is to empower creators to",
+  "share their message through organic",
+  "brand partnerships.",
+  "Focus on what really matters, and let",
+  "us take care of the rest",
+];
+
+const videoTitle = ["WE MAKE", "LIFE", "EASY"];
 
 const Creator = () => {
   const isMobile = window.innerWidth < 700;
-
-  const listTitleSize = isMobile ? 44 : 50;
-  const listDescSize = isMobile ? 44 : 20;
-
-  const styles = {
-    contact: {
-      position: "absolute",
-      overflow: "hidden",
-      right: isMobile ? "-10vw" : "-5vw",
-      top: "-4vw",
-    },
-    pageOne: {
-      position: "relative",
-      overflow: "hidden",
-      width: "100vw",
-    },
-    bgImage: {
-      width: "100vw",
-      height: "100vh",
-      backgroundColor: "rgba(0,100,200,0.4)",
-    },
-    imageText: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "90vh",
-    },
-    scrollTwo: {
-      paddingBottom: 0,
-      marginTop: 0,
-    },
-    sectionThree: {
-      marginLeft: "15vw",
-      marginTop: "30vh",
-    },
-    listTitle: {
-      color: "white",
-      textDecoration: "none",
-      font: `${listTitleSize}px PublicSans-Bold, serif`,
-    },
-    listDesc: {
-      color: "white",
-      textDecoration: "none",
-      font: `${listDescSize}px PublicSans-Regular, serif`,
-      letterSpacing: "0.6px",
-      width: "45vw",
-      lineHeight: 1.55,
-    },
-  };
+  const styles = makeCreatorStyles();
 
   return (
     <Layout>
@@ -74,9 +44,15 @@ const Creator = () => {
         <Collage creator={true} />
         <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
       </div>
-      <div style={styles.bgImage} id={"two"}>
-        <div style={styles.imageText}>
-          <ImageHeader />
+      <div style={styles.bgVideo} id={"two"}>
+        <video className="videoTag" autoPlay loop muted style={styles.video}>
+          <source src={creatorVid} type="video/mp4" />
+        </video>
+        <div style={styles.videoText}>
+          <ImageHeader
+            title={videoTitle}
+            desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+          />
         </div>
         {!isMobile && (
           <Scroll
@@ -96,7 +72,11 @@ const Creator = () => {
       {/*    </div>*/}
       {/*  </div>*/}
       {/*</div>*/}
-      <TheFuture id={"three"} />
+      <TheFuture
+        id={"three"}
+        copyA={"WE DO MORE THAN JUST CONNECT YOU TO BRANDS"}
+        copyB={"WE TREAT YOU LIKE FAMILY. NOT LIKE A NUMBER"}
+      />
     </Layout>
   );
 };

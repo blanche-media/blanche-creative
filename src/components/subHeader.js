@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 import "./../fonts/index.css";
 
-const SubHeader = ({ text, small }) => {
+const SubHeader = ({ text }) => {
   const ref = useRef();
 
   const isMobile = window.innerWidth < 700;
 
   const logoSize = isMobile ? 44 : 50;
-  const bodySize = isMobile ? 8.5 : small ? 5.5 : 6.5;
+  const bodySize = isMobile ? 9.5 : 6;
   const copyrightSize = isMobile ? 18 : 21;
 
   const stylesheet = {

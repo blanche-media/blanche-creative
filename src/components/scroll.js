@@ -2,14 +2,13 @@ import React from "react";
 
 const Scroll = ({ text, id, style }) => {
   const isMobile = window.innerWidth < 700;
-  const bodySize = isMobile ? 0.8 : 1;
 
   const styles = {
     container: {
       display: "flex",
       flexDirection: isMobile ? "column-reverse" : "row",
       alignItems: "center",
-      marginTop: isMobile ? "6vh" : "9vh",
+      marginTop: isMobile ? "6vh" : "13vh",
       marginLeft: isMobile ? 0 : "15vw",
       paddingBottom: isMobile ? "3vh" : "11vh",
     },

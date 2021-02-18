@@ -1,7 +1,15 @@
 import React from "react";
 import RoundButton from "./roundButton";
 
-const TheFuture = ({ id }) => {
+/**
+ *
+ * @param id {string} for scroll to element
+ * @param copyA {string} pieces of copy
+ * @param copyB {string}
+ * @return {JSX.Element}
+ * @constructor
+ */
+const TheFuture = ({ id, copyA, copyB }) => {
   const isMobile = window.innerWidth < 700;
   const headingSize = isMobile ? 30 : 40;
   const bodySize = isMobile ? 16 : 18;
@@ -48,8 +56,8 @@ const TheFuture = ({ id }) => {
     <div style={styles.container} id={id}>
       <div style={styles.text}>
         <div style={styles.title}>THE FUTURE</div>
-        <p style={styles.body}>WE DO MORE THAN JUST CONNECT YOU TO BRANDS</p>
-        <p style={styles.body}>WE TREAT YOU LIKE FAMILY. NOT LIKE A NUMBER</p>
+        <p style={styles.body}>{copyA}</p>
+        <p style={styles.body}>{copyB}</p>
       </div>
       <div style={styles.copy}>©BLANCHE MEDIA INC. 2021</div>
       <RoundButton

@@ -39,10 +39,10 @@
 }
 
 @font-face {
-  font-family: 'PublicSans-Regular';
+  font-family: "PublicSans-Regular";
   font-weight: 400;
   font-style: normal;
-  src: local('PublicSans-Regular'), url("./PublicSans-Regular.ttf") format('truetype');
+  src: local("PublicSans-Regular"),
+    url("./PublicSans-Regular.ttf") format("truetype");
   font-display: fallback;
 }
-
