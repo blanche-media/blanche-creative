@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react"
-import Typed from "typed.js"
-import { NavLink } from "react-router-dom"
+import React, { useRef, useEffect } from "react";
+import Typed from "typed.js";
+import { NavLink } from "react-router-dom";
 
-import "./../fonts/index.css"
+import "./../fonts/index.css";
 
 const Header = ({ text }) => {
   const ref = useRef();
@@ -14,14 +14,14 @@ const Header = ({ text }) => {
   const copyrightSize = isMobile ? 18 : 21;
 
   const stylesheet = {
-    "container" : {
+    container: {
       height: isMobile ? "85vh" : "100vh",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
       width: "100vw",
     },
-    "logo" : {
+    logo: {
       marginLeft: isMobile ? "10vw" : "15vw",
       marginRight: "auto",
       color: "white",
@@ -29,7 +29,7 @@ const Header = ({ text }) => {
       marginTop: "5vh",
       font: `${logoSize}px/${logoSize}px Limerick-Serial-Bold, serif`,
     },
-    "body" : {
+    body: {
       paddingLeft: isMobile ? "10vw" : "15vw",
       color: "white",
       letterSpacing: "-1.1px",
@@ -38,7 +38,7 @@ const Header = ({ text }) => {
       marginTop: "7vh",
       font: `${bodySize}vmax/${bodySize}vmax PublicSans-Bold, serif`,
     },
-    "copyright" : {
+    copyright: {
       position: "absolute",
       color: "white",
       textDecoration: "none",
@@ -49,24 +49,28 @@ const Header = ({ text }) => {
       paddingRight: 0,
       alignSelf: isMobile ? "center" : "left",
       bottom: "5vh",
-    }
-  }
+    },
+  };
 
   useEffect(() => {
     new Typed(ref.current, {
-      strings: [text.replace(/ /g, '<br>')],
+      strings: [text.replace(/ /g, "<br>")],
       typeSpeed: 70,
-      showCursor: false
+      showCursor: false,
     });
   }, []);
 
   return (
     <div style={stylesheet.container}>
-      <NavLink to="/" style={stylesheet.logo}>B.</NavLink>
+      <NavLink to="/" style={stylesheet.logo}>
+        B.
+      </NavLink>
       <h1 ref={ref} style={stylesheet.body} />
-      <NavLink to="/" style={stylesheet.copyright}>©BLANCHE MEDIA INC. 2020</NavLink>
+      <NavLink to="/" style={stylesheet.copyright}>
+        ©BLANCHE MEDIA INC. 2020
+      </NavLink>
     </div>
   );
-}
+};
 
-export default Header
+export default Header;
