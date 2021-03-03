@@ -6,13 +6,14 @@ import RoundButton from "./roundButton";
  * @param id {string} for scroll to element
  * @param copyA {string} pieces of copy
  * @param copyB {string}
+ * @param buttonText {string}
  * @return {JSX.Element}
  * @constructor
  */
-const TheFuture = ({ id, copyA, copyB }) => {
+const TheFuture = ({ id, copyA, copyB, buttonText }) => {
   const isMobile = window.innerWidth < 700;
-  const headingSize = isMobile ? 30 : 40;
-  const bodySize = isMobile ? 16 : 18;
+  const headingSize = isMobile ? 9.3 : 4;
+  const bodySize = isMobile ? 3.5 : 1.6;
 
   const styles = {
     container: {
@@ -21,34 +22,35 @@ const TheFuture = ({ id, copyA, copyB }) => {
       width: "100vw",
       paddingTop: "10vh",
       overflow: "hidden",
+      scrollSnapAlign: "center",
     },
     text: {
-      marginLeft: "15vw",
-      width: "30vw",
+      marginLeft: isMobile ? "8vw" : "15vw",
+      width: isMobile ? "60vw" : "35vw",
     },
     title: {
       color: "white",
-      font: `${headingSize}px Helvetica`,
+      font: `${headingSize}vw Helvetica-Bold`,
       fontWeight: "bold",
-      letterSpacing: "-0.43px",
+      letterSpacing: "-0.12vw",
       marginBottom: "2rem",
     },
     body: {
       color: "white",
-      font: `${bodySize}px PublicSans-Bold`,
+      font: `${bodySize}vw PublicSans-Bold`,
       lineHeight: 1.39,
     },
     copy: {
       color: "white",
-      font: `${bodySize}px PublicSans-Bold`,
+      font: `${bodySize}vw PublicSans-Bold`,
       position: "absolute",
       left: "15vw",
       bottom: "5vh",
     },
     button: {
       position: "absolute",
-      right: -15,
-      top: "20vh",
+      right: "-3vw",
+      bottom: "10vh",
     },
   };
 
@@ -62,8 +64,8 @@ const TheFuture = ({ id, copyA, copyB }) => {
       <div style={styles.copy}>©BLANCHE MEDIA INC. 2021</div>
       <RoundButton
         style={styles.button}
-        text={" JOIN US JOIN US JOIN US JOIN US "}
-        size={25}
+        text={buttonText}
+        size={22}
         dest={"join-us"}
       />
     </div>

@@ -12,16 +12,16 @@ import "./../fonts/index.css";
 const ImageHeader = ({ title, desc }) => {
   const isMobile = window.innerWidth < 700;
 
-  const headingSize = isMobile ? 55 : 90;
-  const bodySize = isMobile ? 15 : 22;
+  const headingSize = isMobile ? 15 : 7;
+  const bodySize = isMobile ? 4 : 1.4;
 
   const stylesheet = {
     container: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
-      width: "80vw",
-      borderLeft: isMobile ? "10px solid white" : "15px solid white",
+      width: isMobile ? "80vw" : "70vw",
+      borderLeft: isMobile ? "2vw solid white" : "0.8vw solid white",
       marginTop: "10px",
       marginBottom: "10px",
     },
@@ -30,7 +30,7 @@ const ImageHeader = ({ title, desc }) => {
       marginRight: "auto",
       color: "white",
       textDecoration: "none",
-      font: `${headingSize}px PublicSans-Bold, serif`,
+      font: `${headingSize}vw PublicSans-Bold, serif`,
       zIndex: 10,
     },
     body: {
@@ -38,11 +38,11 @@ const ImageHeader = ({ title, desc }) => {
       color: "white",
       textDecoration: "none",
       flexGrow: "2",
-      font: `${bodySize}px PublicSans-Regular, serif`,
+      font: `${bodySize}vw PublicSans-Regular, serif`,
       fontFamily: "PublicSans-Regular",
       alignSelf: isMobile ? "start" : "center",
       zIndex: 10,
-      lineHeight: isMobile ? "19px" : "28px",
+      lineHeight: isMobile ? "5vw" : "2.2vw",
       letterSpacing: "0.6px",
       marginTop: isMobile ? "0.5rem" : 0,
     },

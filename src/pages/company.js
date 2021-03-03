@@ -18,7 +18,8 @@ const videoDescriptionFull = [
 ];
 
 const videoDescriptionMobile = [
-  "Getting someones attention isn’t easy.",
+  "Getting someones'",
+  " attention isn’t easy.",
   "Let us paint a clearer picture",
   "towards your audience and say",
   "goodbye to the guessing games.",
@@ -33,50 +34,61 @@ const Company = () => {
 
   return (
     <Layout>
-      <div style={styles.pageOne}>
-        <SEO title="Creator" />
-        <SubHeader text="I'M A CO MPA NY" />
-        <RoundButton
-          text="CONTACT CONTACT"
-          dest="contact"
-          style={styles.contact}
-        />
-        <Collage creator={false} />
-        <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
-      </div>
-      <div style={styles.bgVideo} id={"two"}>
-        <video className="videoTag" autoPlay loop muted style={styles.video}>
-          <source src={companyVid} type="video/mp4" />
-        </video>
-        <div style={styles.videoText}>
-          <ImageHeader
-            title={videoTitle}
-            desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+      <div style={styles.scrollContainer}>
+        <div style={styles.pageOne}>
+          <SEO title="Creator" />
+          <SubHeader text="I'M A CO MPA NY" />
+          <RoundButton
+            text="CONTACT CONTACT CONTACT"
+            size={13}
+            dest="contact"
+            style={styles.contact}
           />
+          <Collage creator={false} />
+          <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
         </div>
-        {!isMobile && (
-          <Scroll
-            text={"KEEP SCROLLING"}
-            id={"three"}
-            style={styles.scrollTwo}
-          />
-        )}
+        <div style={styles.bgVideo} id={"two"}>
+          <video
+            className="videoTag"
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            playsInline={true}
+            style={styles.video}
+          >
+            <source src={companyVid} type="video/mp4" />
+          </video>
+          <div style={styles.videoText}>
+            <ImageHeader
+              title={videoTitle}
+              desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+            />
+          </div>
+          {!isMobile && (
+            <Scroll
+              text={"KEEP SCROLLING"}
+              id={"three"}
+              style={styles.scrollTwo}
+            />
+          )}
+        </div>
+        {/*<div style={styles.sectionThree} id={"three"}>*/}
+        {/*  <div>*/}
+        {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}
+        {/*    <div style={styles.listDesc}>*/}
+        {/*      Our goal is to empower creators to share their message through*/}
+        {/*      organic brand partnerships. Focus on what really matters, and let us*/}
+        {/*      take care of the rest.*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
+        <TheFuture
+          id={"three"}
+          copyA={"WE DO MORE THAN JUST CONNECT YOU TO TALENT"}
+          copyB={"WE TREAT YOUR BUSINESS LIKE OUR OWN"}
+          buttonText={" JOIN US JOIN US JOIN US JOIN US "}
+        />
       </div>
-      {/*<div style={styles.sectionThree} id={"three"}>*/}
-      {/*  <div>*/}
-      {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}
-      {/*    <div style={styles.listDesc}>*/}
-      {/*      Our goal is to empower creators to share their message through*/}
-      {/*      organic brand partnerships. Focus on what really matters, and let us*/}
-      {/*      take care of the rest.*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      <TheFuture
-        id={"three"}
-        copyA={"WE DO MORE THAN JUST CONNECT YOU TO TALENT"}
-        copyB={"WE TREAT YOUR BUSINESS LIKE OUR OWN"}
-      />
     </Layout>
   );
 };

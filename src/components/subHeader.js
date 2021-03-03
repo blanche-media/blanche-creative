@@ -9,7 +9,7 @@ const SubHeader = ({ text }) => {
 
   const isMobile = window.innerWidth < 700;
 
-  const logoSize = isMobile ? 44 : 50;
+  const logoSize = isMobile ? 44 : 59;
   const bodySize = isMobile ? 9.5 : 6;
   const copyrightSize = isMobile ? 18 : 21;
 
