@@ -33,50 +33,60 @@ const Creator = () => {
 
   return (
     <Layout>
-      <div style={styles.pageOne}>
-        <SEO title="Creator" />
-        <SubHeader text="I'M A CRE ATO R" />
-        <RoundButton
-          text="CONTACT CONTACT"
-          dest="contact"
-          style={styles.contact}
-        />
-        <Collage creator={true} />
-        <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
-      </div>
-      <div style={styles.bgVideo} id={"two"}>
-        <video className="videoTag" autoPlay loop muted style={styles.video}>
-          <source src={creatorVid} type="video/mp4" />
-        </video>
-        <div style={styles.videoText}>
-          <ImageHeader
-            title={videoTitle}
-            desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+      <div style={styles.scrollContainer}>
+        <div style={styles.pageOne}>
+          <SEO title="Creator" />
+          <SubHeader text="I'M A CRE ATO R" />
+          <RoundButton
+            text="CONTACT CONTACT"
+            dest="contact"
+            style={styles.contact}
           />
+          <Collage creator={true} />
+          <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
         </div>
-        {!isMobile && (
-          <Scroll
-            text={"KEEP SCROLLING"}
-            id={"three"}
-            style={styles.scrollTwo}
-          />
-        )}
+        <div style={styles.bgVideo} id={"two"}>
+          <video
+            className="videoTag"
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            playsInline={true}
+            style={styles.video}
+          >
+            <source src={creatorVid} type="video/mp4" />
+          </video>
+          <div style={styles.videoText}>
+            <ImageHeader
+              title={videoTitle}
+              desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+            />
+          </div>
+          {!isMobile && (
+            <Scroll
+              text={"KEEP SCROLLING"}
+              id={"three"}
+              style={styles.scrollTwo}
+            />
+          )}
+        </div>
+        {/*<div style={styles.sectionThree} id={"three"}>*/}
+        {/*  <div>*/}
+        {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}
+        {/*    <div style={styles.listDesc}>*/}
+        {/*      Our goal is to empower creators to share their message through*/}
+        {/*      organic brand partnerships. Focus on what really matters, and let us*/}
+        {/*      take care of the rest.*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
+        <TheFuture
+          id={"three"}
+          copyA={"WE DO MORE THAN JUST CONNECT YOU TO BRANDS"}
+          copyB={"WE TREAT YOU LIKE FAMILY. NOT LIKE A NUMBER"}
+          buttonText={" JOIN THE FAMILY JOIN THE FAMILY "}
+        />
       </div>
-      {/*<div style={styles.sectionThree} id={"three"}>*/}
-      {/*  <div>*/}
-      {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}
-      {/*    <div style={styles.listDesc}>*/}
-      {/*      Our goal is to empower creators to share their message through*/}
-      {/*      organic brand partnerships. Focus on what really matters, and let us*/}
-      {/*      take care of the rest.*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      <TheFuture
-        id={"three"}
-        copyA={"WE DO MORE THAN JUST CONNECT YOU TO BRANDS"}
-        copyB={"WE TREAT YOU LIKE FAMILY. NOT LIKE A NUMBER"}
-      />
     </Layout>
   );
 };

@@ -32,8 +32,9 @@ const Scroll = ({ text, id, style }) => {
     <div
       style={{ ...styles.container, ...style }}
       onClick={() => {
-        const element = document.getElementById(id);
-        element.scrollIntoView({ behavior: "smooth" });
+        document
+          .getElementById(id)
+          .scrollIntoView({ behavior: "smooth", block: "start" });
       }}
     >
       <i className="fas fa-arrow-down" style={styles.icon} />

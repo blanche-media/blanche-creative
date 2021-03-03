@@ -4,21 +4,29 @@ export const makeCreatorStyles = () => {
   const listDescSize = isMobile ? 44 : 20;
 
   return {
+    scrollContainer: {
+      scrollSnapType: "y mandatory",
+      overflowY: "scroll",
+      height: "100vh",
+    },
     contact: {
       position: "absolute",
       overflow: "hidden",
-      right: isMobile ? "-10vw" : "-5vw",
-      top: "-4vw",
+      right: isMobile ? "-10vw" : "-3vw",
+      top: "-2vw",
     },
     pageOne: {
       position: "relative",
       overflow: "hidden",
       width: "100vw",
+      height: "100vh",
+      scrollSnapAlign: "center",
     },
     bgVideo: {
       width: "100vw",
       height: "100vh",
       position: "relative",
+      scrollSnapAlign: "center",
     },
     video: {
       width: "100vw",

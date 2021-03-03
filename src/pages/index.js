@@ -9,15 +9,15 @@ const IndexPage = () => {
   const isMobile = window.innerWidth < 700;
 
   const styles = {
-    company: {
-      position: "fixed",
-      right: "-2vmax",
-      top: 0,
-    },
     creator: {
       position: "fixed",
+      right: "-2vmax",
+      top: "-2vw",
+    },
+    company: {
+      position: "fixed",
       right: "-2vw",
-      bottom: isMobile ? "15vh" : "-2vw",
+      bottom: isMobile ? "15vh" : "-1vw",
     },
   };
 

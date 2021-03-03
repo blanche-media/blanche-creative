@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+// smooth scroll support for Safari
+import smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
