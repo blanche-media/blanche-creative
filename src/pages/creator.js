@@ -38,7 +38,8 @@ const Creator = () => {
           <SEO title="Creator" />
           <SubHeader text="I'M A CRE ATO R" />
           <RoundButton
-            text="CONTACT CONTACT"
+            text="CONTACT CONTACT CONTACT "
+            size={13}
             dest="contact"
             style={styles.contact}
           />
@@ -70,6 +71,7 @@ const Creator = () => {
             />
           )}
         </div>
+        {/* TODO: ADD TEAM AND PAST PAGE */}
         {/*<div style={styles.sectionThree} id={"three"}>*/}
         {/*  <div>*/}
         {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}

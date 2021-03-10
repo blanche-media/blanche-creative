@@ -72,6 +72,7 @@ const Company = () => {
             />
           )}
         </div>
+        {/* TODO: ADD TEAM AND PAST PAGE */}
         {/*<div style={styles.sectionThree} id={"three"}>*/}
         {/*  <div>*/}
         {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}

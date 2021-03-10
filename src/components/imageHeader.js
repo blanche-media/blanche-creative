@@ -26,7 +26,7 @@ const ImageHeader = ({ title, desc }) => {
       marginBottom: "10px",
     },
     heading: {
-      marginLeft: "4vw",
+      marginLeft: isMobile ? "4vw" : "3vw",
       marginRight: "auto",
       color: "white",
       textDecoration: "none",
@@ -34,7 +34,7 @@ const ImageHeader = ({ title, desc }) => {
       zIndex: 10,
     },
     body: {
-      paddingLeft: "4vw",
+      paddingLeft: isMobile ? "4vw" : "3vw",
       color: "white",
       textDecoration: "none",
       flexGrow: "2",
