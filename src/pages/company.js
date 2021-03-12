@@ -12,17 +12,17 @@ import { makeCreatorStyles } from "../styles/MakeStyles";
 import companyVid from "../videos/companyVid.mp4";
 
 const videoDescriptionFull = [
-  "Getting someones attention isn’t easy. Let us paint a",
-  "clearer picture towards your audience and say",
+  "Getting someone's attention isn’t easy. Let us paint a",
+  "clearer picture towards your audience so you can say",
   "goodbye to the guessing games.",
 ];
 
 const videoDescriptionMobile = [
-  "Getting someones'",
-  " attention isn’t easy.",
-  "Let us paint a clearer picture",
-  "towards your audience and say",
-  "goodbye to the guessing games.",
+  "Getting someone's attention",
+  "isn’t easy. Let us paint a ",
+  "clearer picture towards your",
+  "audience so you can say goodbye",
+  "to the guessing games.",
 ];
 
 const videoTitle = ["WE", "TURN", "HEADS"];

@@ -22,6 +22,7 @@ const Collage = ({ creator }) => {
       position: "absolute",
       width: isMobile ? "24vh" : "48vh",
       height: isMobile ? "30vh" : "60vh",
+      objectFit: "cover",
     },
   };
 

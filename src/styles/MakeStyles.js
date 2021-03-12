@@ -36,7 +36,7 @@ export const makeCreatorStyles = () => {
     videoText: {
       position: "absolute",
       top: "10vh",
-      bottom: "10vh",
+      bottom: isMobile ? "18vh" : "10vh",
       width: "100vw",
       display: "flex",
       alignItems: "center",
