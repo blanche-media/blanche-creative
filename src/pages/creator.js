@@ -11,21 +11,36 @@ import TheFuture from "../components/theFuture";
 import creatorVid from "../videos/creatorVid.mp4";
 import { makeCreatorStyles } from "../styles/MakeStyles";
 
-const videoDescriptionFull = [
+const videoDescriptionFullA = [
   "Our goal is to empower creators to share their message",
   "through organic brand partnerships.",
   "Focus on what really matters, and let us take care of the rest",
 ];
 
-const videoDescriptionMobile = [
-  "Our goal is to empower creators to",
-  "share their message through organic",
-  "brand partnerships.",
-  "Focus on what really matters, and let",
-  "us take care of the rest",
+const videoDescriptionFullB = [
+  "We understand you, and more importantly, your audience.",
+  "We only make deals that match your persona to keep your",
+  "page thriving with the content your fans love.",
 ];
 
-const videoTitle = ["WE MAKE", "LIFE", "EASY"];
+const videoDescriptionFullC = [
+  "Our use of data and profile analytics enables us to",
+  "accelerate growth on your page. We've mastered the",
+  "algorithm so that you don't have to.",
+];
+
+const videoDescriptionMobileA =
+  "Our goal is to empower creators to share their message through organic brand partnerships. Focus on what really matters, and let us take care of the rest";
+
+const videoDescriptionMobileB =
+  "We understand you, and more importantly, your audience. We only make deals that match your persona to keep your page thriving with the content your fans love.";
+
+const videoDescriptionMobileC =
+  "Our use of data and profile analytics enables us to accelerate growth on your page. We've mastered the algorithm so that you don't have to.";
+
+const videoTitleA = ["WE MAKE", "LIFE", "EASY"];
+const videoTitleB = ["WE ARE", "YOUR", "TEAM"];
+const videoTitleC = ["WE HELP", "YOU", "GROW"];
 
 const Creator = () => {
   const isMobile = window.innerWidth < 700;
@@ -59,8 +74,12 @@ const Creator = () => {
           </video>
           <div style={styles.videoText}>
             <ImageHeader
-              title={videoTitle}
-              desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+              titleA={videoTitleA}
+              titleB={videoTitleB}
+              titleC={videoTitleC}
+              descA={isMobile ? videoDescriptionMobileA : videoDescriptionFullA}
+              descB={isMobile ? videoDescriptionMobileB : videoDescriptionFullB}
+              descC={isMobile ? videoDescriptionMobileC : videoDescriptionFullC}
             />
           </div>
           {!isMobile && (
