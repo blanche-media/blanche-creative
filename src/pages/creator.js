@@ -1,5 +1,10 @@
 import React from "react";
 
+//images
+import Creator1 from "../images/creator1.jpg";
+import Creator2 from "../images/creator2.jpeg";
+import Creator3 from "../images/creator3.jpeg";
+
 import Layout from "../components/layout";
 import Collage from "../components/collage";
 import SubHeader from "../components/subHeader";
@@ -11,21 +16,36 @@ import TheFuture from "../components/theFuture";
 import creatorVid from "../videos/creatorVid.mp4";
 import { makeCreatorStyles } from "../styles/MakeStyles";
 
-const videoDescriptionFull = [
+const videoDescriptionFullA = [
   "Our goal is to empower creators to share their message",
   "through organic brand partnerships.",
   "Focus on what really matters, and let us take care of the rest",
 ];
 
-const videoDescriptionMobile = [
-  "Our goal is to empower creators to",
-  "share their message through organic",
-  "brand partnerships.",
-  "Focus on what really matters, and let",
-  "us take care of the rest",
+const videoDescriptionFullB = [
+  "We understand you, and more importantly, your audience.",
+  "We only make deals that match your persona to keep your",
+  "page thriving with the content your fans love.",
 ];
 
-const videoTitle = ["WE MAKE", "LIFE", "EASY"];
+const videoDescriptionFullC = [
+  "Our use of data and profile analytics enables us to",
+  "accelerate growth on your page. We've mastered the",
+  "algorithm so that you don't have to.",
+];
+
+const videoDescriptionMobileA =
+  "Our goal is to empower creators to share their message through organic brand partnerships. Focus on what really matters, and let us take care of the rest";
+
+const videoDescriptionMobileB =
+  "We understand you, and more importantly, your audience. We only make deals that match your persona to keep your page thriving with the content your fans love.";
+
+const videoDescriptionMobileC =
+  "Our use of data and profile analytics enables us to accelerate growth on your page. We've mastered the algorithm so that you don't have to.";
+
+const videoTitleA = ["WE MAKE", "LIFE", "EASY"];
+const videoTitleB = ["WE ARE", "YOUR", "TEAM"];
+const videoTitleC = ["WE HELP", "YOU", "GROW"];
 
 const Creator = () => {
   const isMobile = window.innerWidth < 700;
@@ -43,7 +63,7 @@ const Creator = () => {
             dest="contact"
             style={styles.contact}
           />
-          <Collage creator={true} />
+          <Collage image1={Creator1} image2={Creator2} image3={Creator3} />
           <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
         </div>
         <div style={styles.bgVideo} id={"two"}>
@@ -59,8 +79,12 @@ const Creator = () => {
           </video>
           <div style={styles.videoText}>
             <ImageHeader
-              title={videoTitle}
-              desc={isMobile ? videoDescriptionMobile : videoDescriptionFull}
+              titleA={videoTitleA}
+              titleB={videoTitleB}
+              titleC={videoTitleC}
+              descA={isMobile ? videoDescriptionMobileA : videoDescriptionFullA}
+              descB={isMobile ? videoDescriptionMobileB : videoDescriptionFullB}
+              descC={isMobile ? videoDescriptionMobileC : videoDescriptionFullC}
             />
           </div>
           {!isMobile && (

@@ -1,13 +1,41 @@
 import React from "react";
-import Creator1 from "../images/creator1.jpg";
-import Creator2 from "../images/creator2.jpeg";
-import Creator3 from "../images/creator3.jpeg";
-import Company1 from "../images/company1.jpg";
-import Company2 from "../images/company2.jpeg";
-import Company3 from "../images/company3.png";
 
-const Collage = ({ creator }) => {
+import { useSpring, animated, config } from "react-spring";
+
+/**
+ *
+ * @param image1 a local image file
+ * @param image2
+ * @param image3
+ * @return {JSX.Element}
+ * @constructor
+ */
+const Collage = ({ image1, image2, image3 }) => {
   const isMobile = window.innerWidth < 700;
+
+  const image1AnimEntry = useSpring({
+    config: { mass: 7, tension: 280, friction: 95 },
+    opacity: 1,
+    transform: "translateY(0px)",
+    from: { opacity: 0, transform: "translateY(250px)", position: "absolute" },
+    delay: 1700,
+  });
+
+  const image2AnimEntry = useSpring({
+    config: config.slow,
+    opacity: 1,
+    transform: "translateY(0px)",
+    from: { opacity: 0, transform: "translateY(250px)", position: "absolute" },
+    delay: 1400,
+  });
+
+  const image3AnimEntry = useSpring({
+    config: { mass: 7, tension: 280, friction: 95 },
+    opacity: 1,
+    transform: "translateY(0px)",
+    from: { opacity: 0, transform: "translateY(250px)", position: "absolute" },
+    delay: 2100,
+  });
 
   const styles = {
     imgContainer: {
@@ -17,7 +45,6 @@ const Collage = ({ creator }) => {
       right: 0,
       top: "16vh",
     },
-
     img: {
       position: "absolute",
       width: isMobile ? "24vh" : "48vh",
@@ -28,31 +55,34 @@ const Collage = ({ creator }) => {
 
   return (
     <div style={styles.imgContainer}>
-      <img
-        src={creator ? Creator1 : Company1}
+      <animated.img
+        src={image1}
         style={{
           ...styles.img,
           left: 0,
           top: "10vh",
           zIndex: isMobile ? 2 : 1,
+          ...image1AnimEntry,
         }}
       />
-      <img
-        src={creator ? Creator2 : Company2}
+      <animated.img
+        src={image2}
         style={{
           ...styles.img,
           left: isMobile ? "20vh" : "40vh",
           top: 0,
           zIndex: isMobile ? 1 : 2,
+          ...image2AnimEntry,
         }}
       />
-      <img
-        src={creator ? Creator3 : Company3}
+      <animated.img
+        src={image3}
         style={{
           ...styles.img,
           left: isMobile ? "18vh" : "80vh",
           top: isMobile ? "26vh" : "15vh",
           zIndex: isMobile ? 3 : 1,
+          ...image3AnimEntry,
         }}
       />
     </div>

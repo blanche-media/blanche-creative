@@ -14,6 +14,7 @@ const TheFuture = ({ id, copyA, copyB, buttonText }) => {
   const isMobile = window.innerWidth < 700;
   const headingSize = isMobile ? 9.3 : 4;
   const bodySize = isMobile ? 3.5 : 1.6;
+  const copyrightSize = isMobile ? 18 : 21;
 
   const styles = {
     container: {
@@ -42,7 +43,8 @@ const TheFuture = ({ id, copyA, copyB, buttonText }) => {
     },
     copy: {
       color: "white",
-      font: `${bodySize}vw PublicSans-Bold`,
+      font: `${copyrightSize}px/${copyrightSize}px BentonSans-Black, serif`,
+      letterSpacing: "-0.37px",
       position: "absolute",
       left: "15vw",
       bottom: "5vh",
@@ -50,7 +52,7 @@ const TheFuture = ({ id, copyA, copyB, buttonText }) => {
     button: {
       position: "absolute",
       right: "-3vw",
-      bottom: "10vh",
+      bottom: isMobile ? "13vh" : "10vh",
     },
   };
 
