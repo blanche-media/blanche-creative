@@ -52,7 +52,7 @@ const TheFuture = ({ id, copyA, copyB, buttonText }) => {
     button: {
       position: "absolute",
       right: "-3vw",
-      bottom: "10vh",
+      bottom: isMobile ? "13vh" : "10vh",
     },
   };
 
