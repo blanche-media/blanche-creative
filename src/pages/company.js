@@ -1,5 +1,10 @@
 import React from "react";
 
+//images
+import Company1 from "../images/company1.jpg";
+import Company2 from "../images/company2.jpeg";
+import Company3 from "../images/company3.png";
+
 import Layout from "../components/layout";
 import Collage from "../components/collage";
 import SubHeader from "../components/subHeader";
@@ -57,7 +62,7 @@ const Company = () => {
             dest="contact"
             style={styles.contact}
           />
-          <Collage creator={false} />
+          <Collage image1={Company1} image2={Company2} image3={Company3} />
           <Scroll text={"SEE WHAT WE CAN DO TOGETHER"} id={"two"} />
         </div>
         <div style={styles.bgVideo} id={"two"}>

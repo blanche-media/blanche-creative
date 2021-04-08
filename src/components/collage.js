@@ -1,38 +1,40 @@
 import React from "react";
-import Creator1 from "../images/creator1.jpg";
-import Creator2 from "../images/creator2.jpeg";
-import Creator3 from "../images/creator3.jpeg";
-import Company1 from "../images/company1.jpg";
-import Company2 from "../images/company2.jpeg";
-import Company3 from "../images/company3.png";
 
 import { useSpring, animated, config } from "react-spring";
 
-const Collage = ({ creator }) => {
+/**
+ *
+ * @param image1 a local image file
+ * @param image2
+ * @param image3
+ * @return {JSX.Element}
+ * @constructor
+ */
+const Collage = ({ image1, image2, image3 }) => {
   const isMobile = window.innerWidth < 700;
 
   const image1AnimEntry = useSpring({
     config: { mass: 7, tension: 280, friction: 95 },
     opacity: 1,
     transform: "translateY(0px)",
-    from: { opacity: 0, transform: "translateY(250px)" },
-    delay: 1100,
+    from: { opacity: 0, transform: "translateY(250px)", position: "absolute" },
+    delay: 1700,
   });
 
   const image2AnimEntry = useSpring({
     config: config.slow,
     opacity: 1,
     transform: "translateY(0px)",
-    from: { opacity: 0, transform: "translateY(250px)" },
-    delay: 1000,
+    from: { opacity: 0, transform: "translateY(250px)", position: "absolute" },
+    delay: 1400,
   });
 
   const image3AnimEntry = useSpring({
     config: { mass: 7, tension: 280, friction: 95 },
     opacity: 1,
     transform: "translateY(0px)",
-    from: { opacity: 0, transform: "translateY(250px)" },
-    delay: 1200,
+    from: { opacity: 0, transform: "translateY(250px)", position: "absolute" },
+    delay: 2100,
   });
 
   const styles = {
@@ -54,7 +56,7 @@ const Collage = ({ creator }) => {
   return (
     <div style={styles.imgContainer}>
       <animated.img
-        src={creator ? Creator1 : Company1}
+        src={image1}
         style={{
           ...styles.img,
           left: 0,
@@ -64,7 +66,7 @@ const Collage = ({ creator }) => {
         }}
       />
       <animated.img
-        src={creator ? Creator2 : Company2}
+        src={image2}
         style={{
           ...styles.img,
           left: isMobile ? "20vh" : "40vh",
@@ -74,7 +76,7 @@ const Collage = ({ creator }) => {
         }}
       />
       <animated.img
-        src={creator ? Creator3 : Company3}
+        src={image3}
         style={{
           ...styles.img,
           left: isMobile ? "18vh" : "80vh",

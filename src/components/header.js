@@ -67,7 +67,7 @@ const Header = ({ text }) => {
       </NavLink>
       <h1 ref={ref} style={stylesheet.body} />
       <NavLink to="/" style={stylesheet.copyright}>
-        ©BLANCHE MEDIA INC. 2020
+        ©BLANCHE MEDIA INC. 2021
       </NavLink>
     </div>
   );
