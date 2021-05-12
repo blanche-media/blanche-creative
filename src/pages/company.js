@@ -54,7 +54,7 @@ const Company = () => {
     <Layout>
       <div style={styles.scrollContainer}>
         <div style={styles.pageOne}>
-          <SEO title="Creator" />
+          <SEO title="Company" />
           <SubHeader text="I'M A CO MPA NY" />
           <RoundButton
             text="CONTACT CONTACT CONTACT"
@@ -68,10 +68,10 @@ const Company = () => {
         <div style={styles.bgVideo} id={"two"}>
           <video
             className="videoTag"
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            playsInline={true}
+            autoPlay
+            loop
+            muted
+            playsInline
             style={styles.video}
           >
             <source src={companyVid} type="video/mp4" />
