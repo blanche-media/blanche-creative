@@ -67,10 +67,6 @@ const Company = () => {
     if (myVideo.hasAttribute("controls")) {
       myVideo.removeAttribute("controls");
     }
-
-    setInterval(function () {
-      if (myVideo.readState === 4 && myVideo.paused) myVideo.play();
-    }, 1000);
   }
 
   return (

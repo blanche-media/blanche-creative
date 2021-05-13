@@ -48,8 +48,27 @@ const videoTitleB = ["WE ARE", "YOUR", "TEAM"];
 const videoTitleC = ["WE HELP", "YOU", "GROW"];
 
 const Creator = () => {
+  const videoRef = useRef();
   const isMobile = window.innerWidth < 700;
   const styles = makeCreatorStyles();
+
+  // required video handling for linkedIn browser
+  if (videoRef.current) {
+    const myVideo = videoRef.current;
+    myVideo.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      },
+      false
+    );
+
+    // hide the controls if they're visible
+    if (myVideo.hasAttribute("controls")) {
+      myVideo.removeAttribute("controls");
+    }
+  }
 
   return (
     <Layout>
@@ -68,10 +87,11 @@ const Creator = () => {
         </div>
         <div style={styles.bgVideo} id={"two"}>
           <video
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            playsInline={true}
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
             style={styles.video}
           >
             <source src={creatorVid} type="video/mp4" />
