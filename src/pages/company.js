@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 //images
 import Company1 from "../images/company1.jpg";
@@ -46,23 +46,26 @@ const videoTitleB = ["USE", "MORE", "DATA"];
 const videoTitleC = ["FIND", "YOUR", "MATCH"];
 
 const Company = () => {
+  const videoRef = useRef();
   const isMobile = window.innerWidth < 700;
 
   const styles = makeCreatorStyles();
 
-  const myVideo = document.querySelector("video");
-  myVideo.addEventListener(
-    "contextmenu",
-    function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    },
-    false
-  );
+  if (videoRef.current) {
+    const myVideo = videoRef.current;
+    myVideo.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      },
+      false
+    );
 
-  // hide the controls if they're visible
-  if (myVideo.hasAttribute("controls")) {
-    myVideo.removeAttribute("controls");
+    // hide the controls if they're visible
+    if (myVideo.hasAttribute("controls")) {
+      myVideo.removeAttribute("controls");
+    }
   }
 
   return (
@@ -82,6 +85,7 @@ const Company = () => {
         </div>
         <div style={styles.bgVideo} id={"two"}>
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
