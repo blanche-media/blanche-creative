@@ -69,7 +69,7 @@ const Company = () => {
     }
 
     setInterval(function () {
-      if (myVideo.paused) myVideo.play();
+      if (myVideo.readState === 4 && myVideo.paused) myVideo.play();
     }, 1000);
   }
 
