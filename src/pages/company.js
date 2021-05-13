@@ -51,6 +51,7 @@ const Company = () => {
 
   const styles = makeCreatorStyles();
 
+  // required video handling for linkedIn browser
   if (videoRef.current) {
     const myVideo = videoRef.current;
     myVideo.addEventListener(
@@ -66,6 +67,10 @@ const Company = () => {
     if (myVideo.hasAttribute("controls")) {
       myVideo.removeAttribute("controls");
     }
+
+    setInterval(function () {
+      if (myVideo.paused) myVideo.play();
+    }, 1000);
   }
 
   return (
