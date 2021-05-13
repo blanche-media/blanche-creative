@@ -68,7 +68,6 @@ const Creator = () => {
         </div>
         <div style={styles.bgVideo} id={"two"}>
           <video
-            className="videoTag"
             autoPlay={true}
             loop={true}
             muted={true}
