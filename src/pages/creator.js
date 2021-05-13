@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 //images
 import Creator1 from "../images/creator1.jpg";
