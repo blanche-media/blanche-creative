@@ -50,6 +50,21 @@ const Company = () => {
 
   const styles = makeCreatorStyles();
 
+  const myVideo = document.querySelector("video");
+  myVideo.addEventListener(
+    "contextmenu",
+    function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+
+  // hide the controls if they're visible
+  if (myVideo.hasAttribute("controls")) {
+    myVideo.removeAttribute("controls");
+  }
+
   return (
     <Layout>
       <div style={styles.scrollContainer}>
@@ -67,7 +82,6 @@ const Company = () => {
         </div>
         <div style={styles.bgVideo} id={"two"}>
           <video
-            className="videoTag"
             autoPlay
             loop
             muted
