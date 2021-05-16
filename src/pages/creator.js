@@ -90,7 +90,7 @@ const Creator = () => {
         <div style={styles.bgVideo} id={"two"}>
           <video
             ref={videoRef}
-            autoPlay
+            autoPlay={false}
             loop
             muted
             playsInline
