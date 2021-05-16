@@ -64,9 +64,11 @@ const Company = () => {
     );
 
     // hide the controls if they're visible
-    if (myVideo.hasAttribute("controls")) {
-      myVideo.removeAttribute("controls");
-    }
+    setTimeout(() => {
+      if (myVideo.hasAttribute("controls")) {
+        myVideo.removeAttribute("controls");
+      }
+    }, 1000);
   }
 
   return (
@@ -92,7 +94,6 @@ const Company = () => {
             muted
             playsInline
             style={styles.video}
-            playsinline
           >
             <source src={companyVid} type="video/mp4" />
           </video>

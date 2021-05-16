@@ -65,9 +65,11 @@ const Creator = () => {
     );
 
     // hide the controls if they're visible
-    if (myVideo.hasAttribute("controls")) {
-      myVideo.removeAttribute("controls");
-    }
+    setTimeout(() => {
+      if (myVideo.hasAttribute("controls")) {
+        myVideo.removeAttribute("controls");
+      }
+    }, 1000);
   }
 
   return (
