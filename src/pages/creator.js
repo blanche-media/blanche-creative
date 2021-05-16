@@ -52,26 +52,6 @@ const Creator = () => {
   const isMobile = window.innerWidth < 700;
   const styles = makeCreatorStyles();
 
-  // required video handling for linkedIn browser
-  if (videoRef.current) {
-    const myVideo = videoRef.current;
-    myVideo.addEventListener(
-      "contextmenu",
-      function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      },
-      false
-    );
-
-    // hide the controls if they're visible
-    setTimeout(() => {
-      if (myVideo.hasAttribute("controls")) {
-        myVideo.removeAttribute("controls");
-      }
-    }, 1000);
-  }
-
   return (
     <Layout>
       <div style={styles.scrollContainer}>
@@ -90,7 +70,7 @@ const Creator = () => {
         <div style={styles.bgVideo} id={"two"}>
           <video
             ref={videoRef}
-            autoPlay={false}
+            autoPlay
             loop
             muted
             playsInline
