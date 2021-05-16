@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 //images
 import Creator1 from "../images/creator1.jpg";
@@ -48,6 +48,7 @@ const videoTitleB = ["WE ARE", "YOUR", "TEAM"];
 const videoTitleC = ["WE HELP", "YOU", "GROW"];
 
 const Creator = () => {
+  const videoRef = useRef();
   const isMobile = window.innerWidth < 700;
   const styles = makeCreatorStyles();
 
@@ -68,11 +69,11 @@ const Creator = () => {
         </div>
         <div style={styles.bgVideo} id={"two"}>
           <video
-            className="videoTag"
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            playsInline={true}
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
             style={styles.video}
           >
             <source src={creatorVid} type="video/mp4" />

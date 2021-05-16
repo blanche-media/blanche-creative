@@ -41,6 +41,7 @@ export const makeCreatorStyles = () => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      zIndex: 5,
     },
     scrollTwo: {
       position: "absolute",
