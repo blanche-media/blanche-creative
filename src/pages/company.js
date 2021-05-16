@@ -92,6 +92,7 @@ const Company = () => {
             muted
             playsInline
             style={styles.video}
+            playsinline
           >
             <source src={companyVid} type="video/mp4" />
           </video>
