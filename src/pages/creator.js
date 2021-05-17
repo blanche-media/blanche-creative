@@ -15,6 +15,7 @@ import ImageHeader from "../components/imageHeader";
 import TheFuture from "../components/theFuture";
 import creatorVid from "../videos/creatorVid.mp4";
 import { makeCreatorStyles } from "../styles/MakeStyles";
+import ImageScroll from "../components/imageScroll";
 
 const videoDescriptionFullA = [
   "Our goal is to empower creators to share their message",
@@ -97,16 +98,17 @@ const Creator = () => {
           )}
         </div>
         {/* TODO: ADD TEAM AND PAST PAGE */}
-        {/*<div style={styles.sectionThree} id={"three"}>*/}
-        {/*  <div>*/}
-        {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}
-        {/*    <div style={styles.listDesc}>*/}
-        {/*      Our goal is to empower creators to share their message through*/}
-        {/*      organic brand partnerships. Focus on what really matters, and let us*/}
-        {/*      take care of the rest.*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
+        <div style={styles.sectionThree} id={"three"}>
+          <div>
+            <h3 style={styles.listTitle}>THE FAMILY</h3>
+            <div style={styles.listDesc}>
+              Our goal is to empower creators to share their message through
+              organic brand partnerships. Focus on what really matters, and let
+              us take care of the rest.
+            </div>
+            <ImageScroll images={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
+          </div>
+        </div>
         <TheFuture
           id={"three"}
           copyA={"WE DO MORE THAN JUST CONNECT YOU TO BRANDS"}

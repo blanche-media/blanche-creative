@@ -1,7 +1,7 @@
 export const makeCreatorStyles = () => {
   const isMobile = window.innerWidth < 700;
-  const listTitleSize = isMobile ? 44 : 50;
-  const listDescSize = isMobile ? 44 : 20;
+  const listTitleSize = isMobile ? 44 : 45;
+  const listDescSize = isMobile ? 44 : 16;
 
   return {
     scrollContainer: {
@@ -51,7 +51,9 @@ export const makeCreatorStyles = () => {
     },
     sectionThree: {
       marginLeft: "15vw",
-      marginTop: "30vh",
+      paddingTop: "20vh",
+      scrollSnapAlign: "start",
+      overflow: "visible",
     },
     listTitle: {
       color: "white",
@@ -64,7 +66,7 @@ export const makeCreatorStyles = () => {
       font: `${listDescSize}px PublicSans-Regular, serif`,
       letterSpacing: "0.6px",
       width: "45vw",
-      lineHeight: 1.55,
+      lineHeight: 1.65,
     },
   };
 };

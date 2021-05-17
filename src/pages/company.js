@@ -101,8 +101,8 @@ const Company = () => {
         {/*    <h3 style={styles.listTitle}>THE FAMILY</h3>*/}
         {/*    <div style={styles.listDesc}>*/}
         {/*      Our goal is to empower creators to share their message through*/}
-        {/*      organic brand partnerships. Focus on what really matters, and let us*/}
-        {/*      take care of the rest.*/}
+        {/*      organic brand partnerships. Focus on what really matters, and let*/}
+        {/*      us take care of the rest.*/}
         {/*    </div>*/}
         {/*  </div>*/}
         {/*</div>*/}
