@@ -8,8 +8,8 @@ const styles = {
     paddingRight: "30px",
   },
   card: {
-    backgroundColor: "blue",
-    minWidth: "170px",
+    minWidth: "175px",
+    maxWidth: "175px",
     height: "220px",
     margin: "20px",
   },
@@ -23,6 +23,10 @@ const styles = {
     height: "100%",
     margin: "20px",
   },
+  img: {
+    height: "100%",
+    width: "100%",
+  },
 };
 
 const ImageScroll = ({ images }) => {
@@ -30,7 +34,9 @@ const ImageScroll = ({ images }) => {
     <div style={styles.scroll}>
       <div style={styles.buffer} />
       {images.map((image, index) => (
-        <div key={index} style={styles.card} />
+        <div key={index} style={styles.card}>
+          <img src={image} style={styles.img} />
+        </div>
       ))}
       <div style={styles.end}>.</div>
     </div>

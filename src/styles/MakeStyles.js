@@ -49,11 +49,12 @@ export const makeCreatorStyles = () => {
       paddingBottom: 0,
       marginTop: 0,
     },
-    sectionThree: {
+    slideShowPage: {
       marginLeft: "15vw",
       paddingTop: "20vh",
       scrollSnapAlign: "start",
       overflow: "visible",
+      height: "100vh",
     },
     listTitle: {
       color: "white",
