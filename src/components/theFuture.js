@@ -12,9 +12,9 @@ import RoundButton from "./roundButton";
  */
 const TheFuture = ({ id, copyA, copyB, buttonText }) => {
   const isMobile = window.innerWidth < 700;
-  const headingSize = isMobile ? 9.3 : 4;
-  const bodySize = isMobile ? 3.5 : 1.6;
   const copyrightSize = isMobile ? 18 : 21;
+  const listTitleSize = isMobile ? 38 : 45;
+  const listDescSize = isMobile ? 16 : 18;
 
   const styles = {
     container: {
@@ -23,22 +23,21 @@ const TheFuture = ({ id, copyA, copyB, buttonText }) => {
       width: "100vw",
       paddingTop: "10vh",
       overflow: "hidden",
-      scrollSnapAlign: "center",
     },
     text: {
-      marginLeft: isMobile ? "8vw" : "15vw",
+      marginLeft: "15vw",
       width: isMobile ? "60vw" : "35vw",
     },
     title: {
       color: "white",
-      font: `${headingSize}vw Helvetica-Bold`,
+      font: `${listTitleSize}px PublicSans-Bold, serif`,
       fontWeight: "bold",
       letterSpacing: "-0.12vw",
       marginBottom: "2rem",
     },
     body: {
       color: "white",
-      font: `${bodySize}vw PublicSans-Bold`,
+      font: `${listDescSize}px PublicSans-Bold, serif`,
       lineHeight: 1.39,
     },
     copy: {

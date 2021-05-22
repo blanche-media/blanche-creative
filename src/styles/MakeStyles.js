@@ -1,11 +1,9 @@
 export const makeCreatorStyles = () => {
   const isMobile = window.innerWidth < 700;
-  const listTitleSize = isMobile ? 44 : 45;
-  const listDescSize = isMobile ? 44 : 16;
 
   return {
     scrollContainer: {
-      scrollSnapType: "y mandatory",
+      scrollSnapType: "y proximity",
       overflowY: "scroll",
       height: "100vh",
     },
@@ -48,26 +46,6 @@ export const makeCreatorStyles = () => {
       bottom: "5.5vh",
       paddingBottom: 0,
       marginTop: 0,
-    },
-    slideShowPage: {
-      marginLeft: "15vw",
-      paddingTop: "20vh",
-      scrollSnapAlign: "start",
-      overflow: "visible",
-      height: "100vh",
-    },
-    listTitle: {
-      color: "white",
-      textDecoration: "none",
-      font: `${listTitleSize}px PublicSans-Bold, serif`,
-    },
-    listDesc: {
-      color: "white",
-      textDecoration: "none",
-      font: `${listDescSize}px PublicSans-Regular, serif`,
-      letterSpacing: "0.6px",
-      width: "45vw",
-      lineHeight: 1.65,
     },
   };
 };

@@ -26,6 +26,7 @@ const styles = {
   img: {
     height: "100%",
     width: "100%",
+    objectFit: "cover",
   },
 };
 
