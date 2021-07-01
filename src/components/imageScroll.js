@@ -4,8 +4,10 @@ const styles = {
   scroll: {
     display: "flex",
     overflowX: "scroll",
+    overflowY: "visible",
     marginLeft: "-15vw",
     paddingRight: "30px",
+    webkitOverflowScrolling: "touch",
   },
   card: {
     minWidth: "175px",

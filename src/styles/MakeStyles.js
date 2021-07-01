@@ -3,7 +3,7 @@ export const makeCreatorStyles = () => {
 
   return {
     scrollContainer: {
-      scrollSnapType: isMobile ? "none" : "y proximity",
+      scrollSnapType: "y proximity",
       overflowY: "scroll",
       height: "100vh",
     },

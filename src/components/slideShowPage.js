@@ -27,9 +27,7 @@ const SlideShowPage = ({ children }) => {
   const styles = {
     slideShowPage: {
       scrollSnapAlign: isMobile ? "none" : "start",
-      overflow: "auto",
       width: "100vw",
-      height: isMobile ? "auto" : "100vh",
     },
     listTitle: {
       color: "white",
