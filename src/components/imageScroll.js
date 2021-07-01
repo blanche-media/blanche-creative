@@ -38,7 +38,7 @@ const ImageScroll = ({ images }) => {
       <div style={styles.buffer} />
       {images.map((image, index) => (
         <div key={index} style={styles.card}>
-          <img src={image} style={styles.img} />
+          <img src={image} style={styles.img} alt={''} />
         </div>
       ))}
       <div style={styles.end}>.</div>

@@ -58,14 +58,14 @@ const Header = ({ text }) => {
       typeSpeed: 70,
       showCursor: false,
     });
-  }, []);
+  }, [text]);
 
   return (
     <div style={stylesheet.container}>
       <NavLink to="/" style={stylesheet.logo}>
         B.
       </NavLink>
-      <h1 ref={ref} style={stylesheet.body} />
+      <h1 ref={ref} style={stylesheet.body}>{''}</h1>
       <NavLink to="/" style={stylesheet.copyright}>
         ©BLANCHE MEDIA INC. 2021
       </NavLink>
